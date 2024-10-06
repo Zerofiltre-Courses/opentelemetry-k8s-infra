@@ -8,17 +8,18 @@ config:
 
   exporters:
     otlp:
-      endpoint:
+      endpoint: "tempo.monitoring.svc.cluster.local:4317"
       tls:
         insecure: true
-
+    debug:
+      verbosity: detailed
     otlphttp:
-      endpoint:
+      endpoint: "http://loki-gateway.monitoring.svc.cluster.local/otlp"
       headers:
-        "X-Scope-OrgID":
+        "X-Scope-OrgID": "namespace"
 
     prometheusremotewrite:
-      endpoint:
+      endpoint: "http://kube-prom-stack-kube-prome-prometheus.monitoring.svc.cluster.local:9090/api/v1/write"
       tls:
         insecure: true
 

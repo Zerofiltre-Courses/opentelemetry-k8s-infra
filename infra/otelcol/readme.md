@@ -17,6 +17,6 @@
 
 ## Deletion
 ```shell
-helm un otelcol -n monitoring
+helm un otelcol -n namespace
 ```
 
