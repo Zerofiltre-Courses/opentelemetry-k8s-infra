@@ -1,0 +1,12 @@
+tempo:
+  ingester:
+    trace_idle_period: "10m"
+    max_block_duration: "15m"
+  reportingEnabled: false
+
+resources:
+    requests:
+      cpu: 0.1
+      memory: 200Mi #as traces are saved locally
+    limits:
+      memory: 200Mi

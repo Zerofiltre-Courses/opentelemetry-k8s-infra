@@ -8,18 +8,18 @@ config:
 
   exporters:
     otlp:
-      endpoint: "tempo.monitoring.svc.cluster.local:4317"
+      endpoint: "tempo.zerofiltre-bootcamp.svc.cluster.local:4317"
       tls:
         insecure: true
     debug:
       verbosity: detailed
     otlphttp:
-      endpoint: "http://loki-gateway.monitoring.svc.cluster.local/otlp"
+      endpoint: "http://loki-backend-gateway.zerofiltre-bootcamp.svc.cluster.local/otlp"
       headers:
-        "X-Scope-OrgID": "namespace"
+        "X-Scope-OrgID": "bootcamp"
 
     prometheusremotewrite:
-      endpoint: "http://kube-prom-stack-kube-prome-prometheus.monitoring.svc.cluster.local:9090/api/v1/write"
+      endpoint: "http://prometheus-server.zerofiltre-bootcamp.svc.cluster.local/api/v1/write"
       tls:
         insecure: true
 
